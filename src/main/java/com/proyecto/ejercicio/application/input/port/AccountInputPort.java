@@ -1,22 +1,20 @@
 package com.proyecto.ejercicio.application.input.port;
 
-import com.proyecto.ejercicio.domain.Account;
-import com.proyecto.ejercicio.domain.CustomerAccountInner;
+import com.proyecto.ejercicio.domain.Cuenta;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public interface AccountInputPort {
 
-    List<Account> findAll();
+    List<Cuenta> findAll();
 
-    Void delete(String accountNumber);
+    Boolean delete(String accountNumber);
 
-    Account getById(String accountNumber);
+    Cuenta getById(String accountNumber);
 
-    Account update(String accountNumber, Account customerDomain);
+    Cuenta update(String accountNumber, Cuenta customerDomain);
 
-    Account save(Account customerDomain);
+    Cuenta save(Cuenta customerDomain);
 
-    List<CustomerAccountInner> getAccountCustomer(LocalDate dateStart, LocalDate dateEnd, String idCustumer);
 }

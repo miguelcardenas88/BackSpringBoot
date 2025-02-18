@@ -2,8 +2,7 @@ package com.proyecto.ejercicio.application.service;
 
 import com.proyecto.ejercicio.application.input.port.AccountInputPort;
 import com.proyecto.ejercicio.application.output.port.AccountOutputPort;
-import com.proyecto.ejercicio.domain.Account;
-import com.proyecto.ejercicio.domain.CustomerAccountInner;
+import com.proyecto.ejercicio.domain.Cuenta;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,34 +15,28 @@ public class AccountService implements AccountInputPort {
 
 
     @Override
-    public List<Account> findAll() {
-        var datos = accountOutputPort.findAll();
-        //return accountOutputPort.findAll();
-        return datos;
+    public List<Cuenta> findAll() {
+        return accountOutputPort.findAll();
+
     }
 
     @Override
-    public Void delete(String accountNumber) {
+    public Boolean delete(String accountNumber) {
         return accountOutputPort.delete(accountNumber);
     }
 
     @Override
-    public Account getById(String accountNumber) {
+    public Cuenta getById(String accountNumber) {
         return accountOutputPort.getById(accountNumber);
     }
 
     @Override
-    public Account update(String accountNumber, Account customerDomain) {
+    public Cuenta update(String accountNumber, Cuenta customerDomain) {
         return accountOutputPort.update(accountNumber, customerDomain);
     }
 
     @Override
-    public Account save(Account customerDomain) {
+    public Cuenta save(Cuenta customerDomain) {
         return accountOutputPort.save(customerDomain);
-    }
-
-    @Override
-    public List<CustomerAccountInner> getAccountCustomer(LocalDate dateStart, LocalDate dateEnd, String idCustumer) {
-        return accountOutputPort.getAccountCustomer(dateStart, dateEnd, idCustumer);
     }
 }

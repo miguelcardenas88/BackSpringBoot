@@ -34,8 +34,5 @@ public class MovimientoEntity {
     @JsonBackReference
     private CuentaEntity cuenta;
 
-    public void setSaldo(BigDecimal saldo) {
-        this.saldo = saldo;
-    }
     
 }

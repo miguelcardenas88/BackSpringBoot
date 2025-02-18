@@ -1,6 +1,8 @@
 package com.proyecto.ejercicio.infrastructure.output.repository.mapper;
 
+import com.proyecto.ejercicio.domain.Cliente;
 import com.proyecto.ejercicio.domain.Cuenta;
+import com.proyecto.ejercicio.infrastructure.output.repository.entity.ClienteEntity;
 import com.proyecto.ejercicio.infrastructure.output.repository.entity.CuentaEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -11,11 +13,11 @@ import java.util.List;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE,
         componentModel = MappingConstants.ComponentModel.SPRING)
-public interface AccountMapper {
+public interface ClienteMapper {
 
 
-    Cuenta AccountEntityToAccount(CuentaEntity AccountEntity);
-    List<Cuenta> ListAccountEntityToAccount(List<CuentaEntity> AccountEntity);
-    CuentaEntity AccountDomainToAccountEntity (Cuenta AccountDomain);
+    Cliente AccountEntityToAccount(ClienteEntity AccountEntity);
+    List<Cliente> ListAccountEntityToAccount(List<ClienteEntity> AccountEntity);
+    ClienteEntity AccountDomainToAccountEntity (Cliente AccountDomain);
 
     }
